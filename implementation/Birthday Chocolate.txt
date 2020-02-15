@@ -1,0 +1,18 @@
+ static int birthday(List<Integer> s, int d, int m) {
+        int count = 0;
+        int first = s.get(0);
+        if(s.size()<2 && first==d && m>0){
+            return 1;
+        }
+
+        for(int i=0; i<s.size()-m+1; i++){
+            int temp = 0;
+            for(int j=0; j<m; j++){
+                temp += s.get(i+j);
+            }
+            if(temp==d){
+                count+=1;
+            }
+        }
+        return count;
+    }

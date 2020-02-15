@@ -1,0 +1,12 @@
+public static List<Integer> gradingStudents(List<Integer> grades) {       int temp = 0;
+        for(int i=0; i<grades.size();i++){
+            if(grades.get(i)>=38){
+                if(grades.get(i)+(5-grades.get(i)%5)-grades.get(i)<3){
+                    temp = grades.get(i)+(5-grades.get(i)%5);
+                    grades.set(i,temp);
+                }
+            }
+        }
+        return grades;
+    }     
+}
