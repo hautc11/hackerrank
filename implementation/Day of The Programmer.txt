@@ -1,0 +1,19 @@
+static String dayOfProgrammer(int year) {
+        int day_Feb = 0;
+        int total_day = 215;
+        if(year<1918){
+            day_Feb = (year%4==0) ? 29 : 28;
+            total_day+=day_Feb;
+        }else {
+            if(year>1918){
+            day_Feb = (year%400==0) || ((year%4==0)&&year%100!=0) ? 29 : 28;
+            total_day+=day_Feb;
+            }else{
+                day_Feb = 15;
+                total_day+=day_Feb;
+            }
+        }
+        int day = 256-total_day;
+        String result = Integer.toString(day)+".09."+Integer.toString(year);
+        return result;
+    }
