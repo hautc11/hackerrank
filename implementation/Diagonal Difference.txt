@@ -1,0 +1,14 @@
+Problem:
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+Solution:
+    public static int diagonalDifference(List<List<Integer>> arr) {
+    // Write your code here
+        int left_sum = 0;
+        int right_sum = 0;
+        for(int i = 0; i < arr.size() ; i++){
+            left_sum = left_sum + arr.get(i).get(i);
+            right_sum = right_sum + arr.get(i).get(arr.size()-(1+i));
+        }
+        return Math.abs(left_sum-right_sum);
+    }
